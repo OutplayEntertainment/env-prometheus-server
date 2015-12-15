@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 10s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    target_groups:
+      - targets: ['localhost:9090']
+
+  - job_name: 'consul-node'
+    consul_sd_configs:
+      - server: 'CONSUL_ADDR'
+        services: [CONSUL_SERVICES]
