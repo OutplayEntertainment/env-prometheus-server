@@ -27,6 +27,7 @@ RUN mkdir -p "$GOPATH/src/github.com/prometheus/"
 WORKDIR $GOPATH/src/github.com/prometheus/
 
 RUN git clone https://github.com/prometheus/prometheus
+RUN git checkout 0.16.1
 WORKDIR $GOPATH/src/github.com/prometheus/prometheus
 
 RUN apt-get install tar openssl git make bash \
